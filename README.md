@@ -19,3 +19,11 @@ UNA:+,? '
 UNB+UNOA:2'
 UNH+1+PAORES+93:1:IA'
 ```
+
+## Install
+
+Edible is published as the gem `edible`.
+
+```ruby
+gem 'edible'
+```
