@@ -1,0 +1,21 @@
+PATH
+  remote: .
+  specs:
+    edible (0.0.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (5.14.4)
+    rake (12.3.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  edible!
+  minitest (>= 5)!
+  rake (~> 12)!
+
+BUNDLED WITH
+   2.1.4
