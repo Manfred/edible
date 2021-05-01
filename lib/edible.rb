@@ -9,7 +9,7 @@ module Edible
     builder.una
     builder.unb
 
-    if block.arity == 0
+    if block.arity.zero?
       builder.instance_eval(&block)
     else
       block.call(builder)
