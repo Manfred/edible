@@ -4,12 +4,25 @@ require_relative '../test_helper'
 
 module Edible
   class BuilderTest < Minitest::Test
-    def test_simple
+    def test_simple_without_block_arg
       out = Edible.build(
         interchange: 'UNOA',
         version: 2
       ) do
         segment('UNH', 1, 'PAORES', [93, 1, 'IA'])
+      end
+      assert_equal(<<~DOC, out)
+        UNB+UNOA:2'
+        UNH+1+PAORES+93:1:IA'
+      DOC
+    end
+
+    def test_simple_with_block_arg
+      out = Edible.build(
+        interchange: 'UNOA',
+        version: 2
+      ) do |e|
+        e.segment('UNH', 1, 'PAORES', [93, 1, 'IA'])
       end
       assert_equal(<<~DOC, out)
         UNB+UNOA:2'

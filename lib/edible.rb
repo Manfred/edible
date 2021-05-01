@@ -8,7 +8,13 @@ module Edible
     builder = Edible::Builder.new(out, **settings)
     builder.una
     builder.unb
-    builder.instance_eval(&block)
+
+    if block.arity == 0
+      builder.instance_eval(&block)
+    else
+      block.call(builder)
+    end
+
     out
   end
 end
