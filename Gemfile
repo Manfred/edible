@@ -2,4 +2,6 @@
 
 source 'https://rubygems.org' do
   gemspec
+
+  gem 'rubocop'
 end
